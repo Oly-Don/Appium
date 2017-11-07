@@ -1,23 +1,22 @@
 package com.set.appium;
 
-import io.appium.java_client.AppiumDriver;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.After;  
-import org.junit.Before;  
-import org.junit.Test;  
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;  
-import org.openqa.selenium.remote.CapabilityType;  
-import org.openqa.selenium.remote.DesiredCapabilities;  
-   
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.URL;  
-import java.util.List; 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.AppiumDriver; 
 
 /**
  * MainRemark TODO
@@ -42,7 +41,6 @@ public class AppContact {
 	        capabilities.setCapability("platformName", "Android");  
 	        capabilities.setCapability("deviceName","Android Emulator");  
 	        capabilities.setCapability("platformVersion", "7.0");  
-//	        capabilities.setCapability("platformVersion", "5.0");  
 	        capabilities.setCapability("app", app.getAbsolutePath());  
 	        capabilities.setCapability("appPackage", "com.example.android.contactmanager");  
 	        capabilities.setCapability("appActivity", ".ContactManager");  
@@ -51,7 +49,7 @@ public class AppContact {
 	   
 	    @After  
 	    public void tearDown() throws Exception {  
-	    	screenShot("C", "Test");
+	    	screenShot("files", "Test"+System.currentTimeMillis());
 	        driver.quit();  
 	    }  
 	   
@@ -62,9 +60,8 @@ public class AppContact {
 	        List<WebElement> textFieldsList = driver.findElementsByClassName("android.widget.EditText");  
 	        textFieldsList.get(0).sendKeys("Some Name");  
 	        textFieldsList.get(2).sendKeys("Some@example.com");  
-//	        driver.swipe(100, 500, 100, 100, 2);  
+	       // driver.swipe(100, 500, 100, 100, 2);  
 	        driver.findElementByName("Save").click();  
-	       
 	    }  
 	    
 		public static void screenShot(String FileDir, String picName) {
@@ -75,5 +72,4 @@ public class AppContact {
 				e.printStackTrace();
 			}
 		}
-	
 }

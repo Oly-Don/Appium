@@ -1,14 +1,13 @@
 package com.set.appium;
 
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.android.AndroidDriver;
 
 /**
  * MainRemark TODO
