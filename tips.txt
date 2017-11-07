@@ -1,0 +1,1 @@
+通过命令获取：adb shell dumpsys window w |findstr \/ |findstr name=（这条命令的作用是，获取当前app和当前Activity的名字
