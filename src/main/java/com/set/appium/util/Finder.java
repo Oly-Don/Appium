@@ -1,5 +1,7 @@
 package com.set.appium.util;
 
+import static org.junit.Assert.fail;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -63,4 +65,5 @@ public class Finder extends SingleDriver {
 		findByXpath(xpath).sendKeys(xpathKeys);
 	}
 
+	
 }
