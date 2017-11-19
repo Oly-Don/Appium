@@ -74,7 +74,7 @@ public class WchatTest {
 		try {
 			driver.findElement(By.id("com.tencent.mm:id/bli")).click();
 			WebElement pswdText = driver.findElement(By.name("请填写密码"));
-			pswdText.sendKeys("fellow52%");
+			pswdText.sendKeys("%%%");
 		} catch (Exception e) {
 			e.printStackTrace();  
 		}
